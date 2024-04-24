@@ -1,0 +1,35 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.sectionContainer {
+  @apply flex flex-col items-center justify-center mb-40;
+}
+
+.mainText {
+  @apply my-3 text-purple-700 text-4xl text-center font-semibold opacity-80;
+}
+
+.secondaryText {
+  @apply my-3 text-green-700 text-xl text-start font-semibold opacity-60;
+}
+
+.secondaryDescription {
+  @apply text-xl text-black text-start mt-0 font-light opacity-80;
+}
+
+.subText {
+  @apply text-xl text-black text-center mt-3 font-light opacity-80;
+}
+
+.iosButton {
+  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-green-500 hover:bg-green-700 duration-150 rounded-full text-xl;
+}
+
+.androidButton {
+  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-blue-500 hover:bg-blue-700 duration-150 rounded-full text-xl;
+}
+
+.sectionMargin {
+  @apply mt-5;
+}
