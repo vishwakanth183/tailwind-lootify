@@ -3,7 +3,7 @@
 @tailwind utilities; */
 
 .sectionContainer {
-  @apply flex flex-col items-center justify-center mb-40;
+  @apply flex flex-col items-center justify-center mb-40 px-20;
 }
 
 .mainText {

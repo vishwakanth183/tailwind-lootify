@@ -22,7 +22,7 @@ const LandingComponent = () => {
           stay connected to the game's pulse anytime, anywhere, bringing the
           stadium experience to your fingertips.
         </p>
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-x-10 md:space-y-0 py-5">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-x-10 md:space-y-0 py-5 mt-5">
           <button className={landingStyles.iosButton}>Download for iOS</button>
           <button className={landingStyles.androidButton}>
             Download for android
@@ -89,6 +89,16 @@ const LandingComponent = () => {
             </div>
           </div>
         </div>
+      </section>
+      {/* News section */}
+      <section className={landingStyles.sectionContainer}>
+          <img src="/section-6.png" alt="Features" className="h-60 w-70" />
+            <h3 className={landingStyles.mainText}>
+              Your One-Stop Shop for Cricket News
+            </h3>
+            <p className={landingStyles.subText}>
+            Craving instant cricket updates? Dive into Vcricket, your one-stop shop for news! Get live alerts, expert analysis, and exclusive interviews. Follow your favorite teams, players, and tournaments for a personalized feed. Unfiltered news, in-depth stories, and engaging quizzes, Vcricket keeps you in the game - 24/7. 
+            </p>
       </section>
     </div>
   );
