@@ -6,6 +6,14 @@
   @apply flex flex-col items-center justify-center mb-40 px-20;
 }
 
+.footerContainer {
+  @apply flex flex-col items-center justify-center mb-10 px-20 md:flex-row md:items-end md:justify-around;
+}
+
+.footerText {
+  @apply px-6 py-3 cursor-pointer flex items-center justify-center hover:scale-105 text-black text-lg hover:text-red-700 duration-150;
+}
+
 .mainText {
   @apply my-3 text-purple-700 text-4xl text-center font-semibold opacity-80;
 }

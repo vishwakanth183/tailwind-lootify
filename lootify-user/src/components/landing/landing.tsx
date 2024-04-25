@@ -3,7 +3,7 @@ import landingStyles from "./landing.module.css";
 
 const LandingComponent = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center py-3 bg-white px-20">
+    <div className="min-h-screen flex flex-col py-3 bg-white px-20">
       {/* Hero section */}
       <section className={landingStyles.sectionContainer}>
         {/* <img src="/lootify.png" alt="" className="h-[100px] w-[80px]" /> */}
@@ -92,14 +92,32 @@ const LandingComponent = () => {
       </section>
       {/* News section */}
       <section className={landingStyles.sectionContainer}>
-          <img src="/section-6.png" alt="Features" className="h-60 w-70" />
-            <h3 className={landingStyles.mainText}>
-              Your One-Stop Shop for Cricket News
-            </h3>
-            <p className={landingStyles.subText}>
-            Craving instant cricket updates? Dive into Vcricket, your one-stop shop for news! Get live alerts, expert analysis, and exclusive interviews. Follow your favorite teams, players, and tournaments for a personalized feed. Unfiltered news, in-depth stories, and engaging quizzes, Vcricket keeps you in the game - 24/7. 
-            </p>
+        <img src="/section-6.png" alt="Features" className="h-60 w-70" />
+        <h3 className={landingStyles.mainText}>
+          Your One-Stop Shop for Cricket News
+        </h3>
+        <p className={landingStyles.subText}>
+          Craving instant cricket updates? Dive into Vcricket, your one-stop
+          shop for news! Get live alerts, expert analysis, and exclusive
+          interviews. Follow your favorite teams, players, and tournaments for a
+          personalized feed. Unfiltered news, in-depth stories, and engaging
+          quizzes, Vcricket keeps you in the game - 24/7.
+        </p>
       </section>
+      {/* Footer */}
+      <footer className={landingStyles.footerContainer}>
+        <img src="/Vcricket.svg" alt="Features" className="h-10 w-10" />
+        <div className="flex flex-col md:flex-row">
+          {/* Faq */}
+          <div className={landingStyles.footerText}>FAQ</div>
+          {/* Privacy Policy */}
+          <div className={landingStyles.footerText}>Privacy Policy</div>
+          {/* Terms and conditions */}
+          <div className={landingStyles.footerText}>Terms and conditions</div>
+          {/* About us */}
+          <div className={landingStyles.footerText}>About us</div>
+        </div>
+      </footer>
     </div>
   );
 };

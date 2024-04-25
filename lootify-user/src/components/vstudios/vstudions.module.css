@@ -1,0 +1,79 @@
+.mainView {
+  @apply min-h-screen bg-white space-y-36;
+}
+
+.headerSection {
+  background-image: url("https://images.pexels.com/photos/8721339/pexels-photo-8721339.jpeg?auto=compress&cs=tinysrgb&w=600");
+  /* background-repeat: no-repeat; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-size: contain;
+  @apply h-[450px];
+}
+
+.headerText {
+  @apply text-white text-6xl font-bold pt-5 px-10 font-sans;
+}
+
+.logoSection {
+  @apply h-[300px] w-[300px] px-10;
+}
+
+.textContainer {
+  @apply max-w-[700px] text-2xl mt-20 mx-10 uppercase border-2 border-white border-opacity-70 p-6 text-white text-center;
+}
+
+.menuGroupBorder {
+  @apply border-b-2 mx-2 mt-2 opacity-0 group-hover:opacity-100 border-zinc-200;
+}
+
+.menuGroupText {
+  @apply text-white text-center;
+}
+
+.menuBlock {
+  @apply hidden md:flex flex-row justify-end items-center mr-10 space-x-10;
+}
+
+.featureSection {
+  @apply relative flex flex-col md:flex-row my-10 mx-10;
+}
+
+.absoluteTextConatiner {
+  @apply md:absolute md:shadow-lg md:rounded-sm top-32 left-[480px] bg-white mt-10 md:mt-0 max-w-4xl p-0 md:p-12;
+}
+
+.featureTextTitle {
+  @apply text-black text-4xl font-bold mb-3 font-sans;
+}
+
+.featureTextContainer {
+  @apply text-black font-normal text-xl font-sans  text-justify;
+}
+
+.ourCreationContainer {
+  @apply pb-10;
+}
+
+.ourCreationText {
+  @apply text-black text-6xl font-bold pt-5 px-10 font-sans mb-20;
+}
+
+.creationGrid {
+  @apply grid grid-cols-2 md:grid-cols-4;
+}
+
+.gridImg {
+  @apply h-[400px] w-full  object-cover;
+}
+
+.item {
+  @apply relative mx-5 my-5 bg-black;
+}
+
+.itemGradient {
+  @apply absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+}
+
+.itemText {
+  @apply absolute text-white text-3xl bg-none bottom-8 left-5;
+}
