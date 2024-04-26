@@ -1,5 +1,9 @@
 .mainView {
-  @apply min-h-screen bg-white space-y-36;
+  @apply min-h-screen bg-white space-y-36 dark:bg-black;
+}
+
+.dark {
+  @apply bg-black;
 }
 
 .headerSection {
@@ -11,7 +15,7 @@
 }
 
 .headerText {
-  @apply text-white text-6xl font-bold pt-5 px-10 font-sans;
+  @apply text-white dark:text-teal-100 text-4xl md:text-6xl font-bold pt-5 px-10 font-sans;
 }
 
 .logoSection {
@@ -19,7 +23,7 @@
 }
 
 .textContainer {
-  @apply max-w-[700px] text-2xl mt-20 mx-10 uppercase border-2 border-white border-opacity-70 p-6 text-white text-center;
+  @apply max-w-[700px] dark:text-teal-100 text-2xl mt-20 mx-10 uppercase border-2 border-white border-opacity-70 p-6 text-white text-center;
 }
 
 .menuGroupBorder {
@@ -27,7 +31,7 @@
 }
 
 .menuGroupText {
-  @apply text-white text-center;
+  @apply text-white dark:text-teal-100 text-center;
 }
 
 .menuBlock {
@@ -39,15 +43,15 @@
 }
 
 .absoluteTextConatiner {
-  @apply md:absolute md:shadow-lg md:rounded-sm top-32 left-[480px] bg-white mt-10 md:mt-0 max-w-4xl p-0 md:p-12;
+  @apply md:absolute md:shadow-lg md:rounded-sm top-32 left-[480px] dark:text-teal-100 bg-white mt-10 md:mt-0 max-w-4xl p-0 md:p-12 dark:bg-black;
 }
 
 .featureTextTitle {
-  @apply text-black text-4xl font-bold mb-3 font-sans;
+  @apply dark:text-teal-100 text-black text-4xl font-bold mb-3 font-sans;
 }
 
 .featureTextContainer {
-  @apply text-black font-normal text-xl font-sans  text-justify;
+  @apply dark:text-white text-black font-normal text-xl font-sans  text-justify;
 }
 
 .ourCreationContainer {
@@ -55,7 +59,7 @@
 }
 
 .ourCreationText {
-  @apply text-black text-6xl font-bold pt-5 px-10 font-sans mb-20;
+  @apply dark:text-teal-100 text-black text-6xl font-bold pt-5 px-10 font-sans mb-20;
 }
 
 .creationGrid {
@@ -75,5 +79,96 @@
 }
 
 .itemText {
-  @apply absolute text-white text-3xl bg-none bottom-8 left-5;
+  @apply absolute dark:text-teal-100 text-white text-xl md:text-3xl bg-none bottom-8 left-5;
+}
+
+/* Hamburger Menu */
+
+.hamburgerSection {
+  @apply md:hidden absolute bottom-0 right-10 -top-28 w-[24px] h-[24px] transition-all duration-75 rotate-0 z-40;
+}
+
+.mobileMenu {
+  @apply z-30 hidden absolute flex-col items-center justify-start bottom-0 h-screen w-full bg-black bg-opacity-90 pt-32 space-y-10;
+}
+
+.mobileMenu.active {
+  @apply flex duration-75 md:hidden; /* Add the desired styles for the active state */
+}
+
+.hamburgerTop,
+.hamburgerMiddle,
+.hamburgerBottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburgerMiddle {
+  transform: translateY(7px);
+}
+
+.hamburgerBottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburgerTop {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburgerMiddle {
+  display: none;
+}
+
+.open .hamburgerBottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.headerItemText {
+  @apply dark:text-teal-100 text-white text-center;
+}
+
+.headerItemBorder {
+  @apply border-b-2 mx-2 mt-2 opacity-0 border-zinc-200;
+}
+
+.mobileMenu .headerItemBorder {
+  @apply mx-auto max-w-10;
+}
+
+.footerSection {
+  @apply flex flex-col md:flex-row justify-around items-center bg-black bg-opacity-90 py-10 space-y-12 md:space-y-0;
+}
+
+.footerText {
+  @apply dark:text-teal-100 px-6 pt-3 cursor-pointer flex items-center justify-center hover:scale-105 text-white text-lg hover:text-red-700 duration-150;
+}
+
+.footerLogo {
+  @apply dark:text-teal-100 text-white text-4xl md:text-4xl font-bold font-sans;
+}
+
+.footerItem {
+  @apply dark:text-teal-100 flex flex-col md:flex-row;
+}
+
+.footerImageSection {
+  @apply flex flex-row;
+}
+
+.footerImage {
+  @apply w-8 h-8 ml-5 cursor-pointer hover:scale-105 duration-150;
+}
+
+.darkModeButton {
+  @apply py-2 px-4 rounded-md text-white bg-blue-500 text-sm hover:bg-blue-600;
 }

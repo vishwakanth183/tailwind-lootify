@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import VstudioStyles from "./vstudions.module.css";
+import { useTheme } from "next-themes";
 
 const VstudiosComponent = () => {
   const featureImg =
@@ -48,8 +51,82 @@ const VstudiosComponent = () => {
     }, // Replaces "Immersive Focus Training" for a more user-friendly term
   ];
 
+  const { setTheme, resolvedTheme } = useTheme();
+
+  // Function to handle hamburger tap
+  const onHamburgerTap = () => {
+    const btn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    btn?.classList.toggle(VstudioStyles.open);
+    mobileMenu?.classList.toggle(VstudioStyles.active);
+  };
+
+  // Function to handle mode
+  const handleMode = () => {
+    if (resolvedTheme == "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  // State to handle hamburger tap
+  // const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
+
+  const MenuItems = () => {
+    return (
+      <>
+        <div className="group cursor-pointer">
+          <div className={`${VstudioStyles.headerItemText}`}>About</div>
+          <div
+            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+          ></div>
+        </div>
+
+        <div className="group cursor-pointer">
+          <div className={`${VstudioStyles.headerItemText}`}>Carrers</div>
+          <div
+            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+          ></div>
+        </div>
+
+        <div className="group cursor-pointer">
+          <div className={`${VstudioStyles.headerItemText}`}>Events</div>
+          <div
+            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+          ></div>
+        </div>
+
+        <div className="group cursor-pointer">
+          <div className={`${VstudioStyles.headerItemText}`}>Products</div>
+          <div
+            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+          ></div>
+        </div>
+
+        <div className="group cursor-pointer">
+          <div className={`${VstudioStyles.headerItemText}`}>Support</div>
+          <div
+            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+          ></div>
+        </div>
+
+        <button
+          className={VstudioStyles.darkModeButton}
+          onClick={() => handleMode()}
+        >
+          Dark mode/Light Mode
+        </button>
+      </>
+    );
+  };
+
   return (
-    <div className={VstudioStyles.mainView}>
+    <div
+      className={`${VstudioStyles.mainView} ${
+        resolvedTheme == "dark" ? VstudioStyles.dark : ""
+      }`}
+    >
       {/* Header Section */}
       <section className={VstudioStyles.headerSection}>
         <div className="flex md:flex-row justify-between items-center">
@@ -61,30 +138,7 @@ const VstudiosComponent = () => {
               <div className={VstudioStyles.groupBorder}></div>
             </div> */}
 
-            <div className="group cursor-pointer">
-              <div className="text-white text-center">About</div>
-              <div className="border-b-2 mx-2 mt-2 opacity-100 group-hover:opacity-100 border-zinc-200"></div>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="text-white text-center">Carrers</div>
-              <div className="border-b-2 mx-2 mt-2 opacity-0 group-hover:opacity-100 border-zinc-200"></div>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="text-white text-center">Events</div>
-              <div className="border-b-2 mx-2 mt-2 opacity-0 group-hover:opacity-100 border-zinc-200"></div>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="text-white text-center">Products</div>
-              <div className="border-b-2 mx-2 mt-2 opacity-0 group-hover:opacity-100 border-zinc-200"></div>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="text-white text-center">Support</div>
-              <div className="border-b-2 mx-2 mt-2 opacity-0 group-hover:opacity-100 border-zinc-200"></div>
-            </div>
+            <MenuItems />
           </div>
         </div>
         <div className={VstudioStyles.textContainer}>
@@ -112,9 +166,10 @@ const VstudiosComponent = () => {
         <div className={VstudioStyles.ourCreationText}>Our Creations</div>
 
         <div className={VstudioStyles.creationGrid}>
-          {creationDetails.map((items) => {
+          {creationDetails.map((items, index) => {
             return (
               <div
+                key={index}
                 className={`${VstudioStyles.item} group hover:scale-105 duration-200`}
               >
                 <img
@@ -129,6 +184,59 @@ const VstudiosComponent = () => {
           })}
         </div>
       </section>
+
+      {/* Hamburger section */}
+      <button
+        id="menu-btn"
+        onClick={() => onHamburgerTap()}
+        className={`${VstudioStyles.hamburgerSection}`}
+      >
+        <span className={VstudioStyles.hamburgerTop}></span>
+        <span className={VstudioStyles.hamburgerMiddle}></span>
+        <span className={VstudioStyles.hamburgerBottom}></span>
+      </button>
+
+      {/* Mobile menu section */}
+      <div id="mobile-menu" className={`${VstudioStyles.mobileMenu}`}>
+        <MenuItems />
+      </div>
+
+      {/* Footer Section */}
+      <footer className={VstudioStyles.footerSection}>
+        <div className={VstudioStyles.footerLogo}>VStudios</div>
+        <div className={VstudioStyles.footerItem}>
+          {/* Faq */}
+          <div className={VstudioStyles.footerText}>FAQ</div>
+          {/* Privacy Policy */}
+          <div className={VstudioStyles.footerText}>Privacy Policy</div>
+          {/* Terms and conditions */}
+          <div className={VstudioStyles.footerText}>Terms and conditions</div>
+          {/* About us */}
+          <div className={VstudioStyles.footerText}>About us</div>
+        </div>
+        <div className={VstudioStyles.footerImageSection}>
+          <img
+            src="/icon-facebook.svg"
+            alt="facebook"
+            className={VstudioStyles.footerImage}
+          />
+          <img
+            src="/icon-instagram.svg"
+            alt="instagram"
+            className={VstudioStyles.footerImage}
+          />
+          <img
+            src="/icon-pinterest.svg"
+            alt="twitter"
+            className={VstudioStyles.footerImage}
+          />
+          <img
+            src="/icon-twitter.svg"
+            alt="pintrest"
+            className={VstudioStyles.footerImage}
+          />
+        </div>
+      </footer>
     </div>
   );
 };
