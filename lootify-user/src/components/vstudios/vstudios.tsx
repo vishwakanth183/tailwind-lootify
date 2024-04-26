@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import VstudioStyles from "./vstudions.module.css";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
@@ -54,6 +54,17 @@ const VstudiosComponent = () => {
   ];
 
   const { setTheme, resolvedTheme } = useTheme();
+
+  const [isClient, setIsClient] = useState(false)
+ 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if(!isClient)
+    {
+      return <div></div>
+    }
 
   // Function to handle hamburger tap
   const onHamburgerTap = () => {
