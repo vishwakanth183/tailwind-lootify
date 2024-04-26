@@ -170,5 +170,13 @@
 }
 
 .darkModeButton {
-  @apply py-2 px-4 rounded-md text-white bg-blue-500 text-sm hover:bg-blue-600;
+  @apply py-2 flex flex-row items-center px-4 rounded-md text-white bg-blue-500 text-sm hover:bg-blue-600 duration-150;
+}
+
+.lightModeButton{
+  @apply py-2 flex flex-row items-center px-4 rounded-md text-black bg-white text-sm hover:bg-opacity-90 duration-150;
+}
+
+.modeIcon{
+  @apply h-5 w-5 mr-2
 }

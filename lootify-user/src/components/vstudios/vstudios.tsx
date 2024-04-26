@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import VstudioStyles from "./vstudions.module.css";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 import { useTheme } from "next-themes";
 
 const VstudiosComponent = () => {
@@ -112,10 +114,11 @@ const VstudiosComponent = () => {
         </div>
 
         <button
-          className={VstudioStyles.darkModeButton}
+          className={`${resolvedTheme != "dark" ? VstudioStyles.darkModeButton :VstudioStyles.lightModeButton}`}
           onClick={() => handleMode()}
         >
-          Dark mode/Light Mode
+        { resolvedTheme == "dark" ? <CiLight className={VstudioStyles.modeIcon}/> : <MdDarkMode className={VstudioStyles.modeIcon}/>}
+        { resolvedTheme == "dark" ? "Light Mode" : "Dark mode"}
         </button>
       </>
     );
