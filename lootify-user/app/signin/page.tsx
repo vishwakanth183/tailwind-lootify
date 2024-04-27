@@ -1,4 +1,8 @@
 import React from "react";
+// import { MdDarkMode } from "react-icons/md";
+// import { FaArrowRightFromBracket } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Signin = () => {
   const sample =
@@ -15,8 +19,8 @@ const Signin = () => {
 
           {/* Login description */}
           <div className="text-zinc-400 font-normal text-sm mt-5 w-80">
-            Login to your account to explore various hotels and immerse into the
-            joy of your trip with comfortable hotel
+            Secure your ideal travel haven. Log in to our platform and unlock a
+            world of exceptional hotels
           </div>
 
           {/* Email Input */}
@@ -27,11 +31,23 @@ const Signin = () => {
           />
 
           {/* Forgot password & Next button */}
-          <div className="mt-5 flex md:flex-row justify-between items-center">
-            <div className="text-sm font-bold text-gray-500">
+          {/* <div className="mt-2 flex md:flex-row justify-end items-center"> */}
+          {/* <div className="text-sm font-bold text-gray-500">
               Forgot Password?
-            </div>
-            {/* <button className="px-6 py-3 bg-blue-500 text-white rounded-lg">Next</button> */}
+            </div> */}
+          {/* <button className="px-6 py-3 bg-blue-500 text-white rounded-lg">Next</button> */}
+          {/* </div> */}
+
+          <div className="flex flex-row justify-between items-center">
+            <button className="flex flex-row justify-between items-center px-6 py-3 bg-teal-700 rounded-md shadow-xl border border-zinc-200 hover:scale-105 duration-150">
+              <div className="text-white text-center font-normal text-md">
+                Next
+              </div>
+              <FaArrowRightLong color="white" className="h-4 w-4 ml-3" />
+            </button>
+            <button className="text-sm font-bold text-gray-500 hover:scale-105 duration-150">
+              Forgot Password?
+            </button>
           </div>
 
           {/* Divider view */}
@@ -43,13 +59,23 @@ const Signin = () => {
 
           {/* Social buttons */}
           <div className="w-full flex md:flex-row justify-around items-center mt-5">
-            <button className="px-6 py-3 bg-blue-700 rounded-md shadow-xl border border-zinc-200 hover:scale-105 duration-150">
+            <button className="px-6 py-3 flex md:flex-row items-center bg-blue-700 rounded-md shadow-xl border border-zinc-200 hover:scale-105 duration-150">
+              <img
+                src="/icon-facebook.svg"
+                alt="facebook"
+                className="h-5 w-5 mr-2"
+              />
               <div className="text-white text-center font-normal text-md">
                 Facebook
               </div>
             </button>
 
-            <button className="px-6 py-3 bg-green-700 rounded-md shadow-xl border border-zinc-200 hover:scale-105 duration-150">
+            <button className="px-6 py-3 flex md:flex-row items-center bg-green-700 rounded-md shadow-xl border border-zinc-200 hover:scale-105 duration-150">
+              <img
+                src="/icon-google.svg"
+                alt="facebook"
+                className="h-5 w-5 mr-2"
+              />
               <div className="text-white text-center font-normal text-md">
                 Google
               </div>

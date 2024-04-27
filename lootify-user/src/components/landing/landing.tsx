@@ -23,8 +23,10 @@ const LandingComponent = () => {
           stadium experience to your fingertips.
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-x-10 md:space-y-0 py-5 mt-5">
-          <button className={landingStyles.iosButton}>Download for iOS</button>
-          <button className={landingStyles.androidButton}>
+          <button className={`${landingStyles.iosButton} hover:scale-105`}>
+            Download for iOS
+          </button>
+          <button className={`${landingStyles.androidButton} hover:scale-105`}>
             Download for android
           </button>
         </div>
@@ -106,7 +108,11 @@ const LandingComponent = () => {
       </section>
       {/* Footer */}
       <footer className={landingStyles.footerContainer}>
-        <img src="/Vcricket.svg" alt="Features" className="h-10 w-10" />
+        <img
+          src="/Vcricket.svg"
+          alt="Features"
+          className={landingStyles.footerImg}
+        />
         <div className="flex flex-col md:flex-row">
           {/* Faq */}
           <div className={landingStyles.footerText}>FAQ</div>

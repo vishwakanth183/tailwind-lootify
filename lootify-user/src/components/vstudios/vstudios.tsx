@@ -53,18 +53,38 @@ const VstudiosComponent = () => {
     }, // Replaces "Immersive Focus Training" for a more user-friendly term
   ];
 
+  const testimonials = [
+    {
+      name: "Alice Walker",
+      designation: "CEO, Technovation Inc.",
+      description:
+        "Vstudios' VR solutions have revolutionized the way we prototype and showcase our products. The immersive experiences they create are incredibly engaging and allow us to gather valuable user feedback early in the development process. We highly recommend Vstudios to any company looking to leverage VR technology.",
+    },
+    {
+      name: "David Jones",
+      designation: "Lead Architect, Green Builders",
+      description:
+        "Vstudios helped us create a stunning VR experience that allows potential clients to virtually tour our architectural designs. This has been a game-changer for our sales team, as it allows them to showcase our projects in a way that traditional methods simply cannot. Vstudios is a true innovator in the VR field.",
+    },
+    {
+      name: "Emily Williams",
+      designation: "Professor, Media Studies, Stanford University",
+      description:
+        "Vstudios is at the forefront of VR education. Their VR simulations provide students with a unique and immersive learning experience that is simply unmatched. Students are able to explore complex concepts in a way that is both engaging and unforgettable. Vstudios is a valuable asset to the educational landscape.",
+    },
+  ];
+
   const { setTheme, resolvedTheme } = useTheme();
 
-  const [isClient, setIsClient] = useState(false)
- 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+  const [isClient, setIsClient] = useState(false);
 
-  if(!isClient)
-    {
-      return <div></div>
-    }
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <div></div>;
+  }
 
   // Function to handle hamburger tap
   const onHamburgerTap = () => {
@@ -92,7 +112,7 @@ const VstudiosComponent = () => {
         <div className="group cursor-pointer">
           <div className={`${VstudioStyles.headerItemText}`}>About</div>
           <div
-            className={`${VstudioStyles.headerItemBorder} group-hover:opacity-100`}
+            className={`${VstudioStyles.activeHeaderItemBorder} group-hover:opacity-100`}
           ></div>
         </div>
 
@@ -125,11 +145,19 @@ const VstudiosComponent = () => {
         </div>
 
         <button
-          className={`${resolvedTheme != "dark" ? VstudioStyles.darkModeButton :VstudioStyles.lightModeButton}`}
+          className={`${
+            resolvedTheme != "dark"
+              ? VstudioStyles.darkModeButton
+              : VstudioStyles.lightModeButton
+          }`}
           onClick={() => handleMode()}
         >
-        { resolvedTheme == "dark" ? <CiLight className={VstudioStyles.modeIcon}/> : <MdDarkMode className={VstudioStyles.modeIcon}/>}
-        { resolvedTheme == "dark" ? "Light Mode" : "Dark mode"}
+          {resolvedTheme == "dark" ? (
+            <CiLight className={VstudioStyles.modeIcon} />
+          ) : (
+            <MdDarkMode className={VstudioStyles.modeIcon} />
+          )}
+          {resolvedTheme == "dark" ? "Light Mode" : "Dark mode"}
         </button>
       </>
     );
@@ -177,7 +205,10 @@ const VstudiosComponent = () => {
       </div>
       {/* Our creation section */}
       <section className={VstudioStyles.ourCreationContainer}>
-        <div className={VstudioStyles.ourCreationText}>Our Creations</div>
+        <div className={VstudioStyles.ourCreationHeader}>
+          <div className={VstudioStyles.ourCreationText}>Our Creations</div>
+          <button className={VstudioStyles.seeAllButton}>See All</button>
+        </div>
 
         <div className={VstudioStyles.creationGrid}>
           {creationDetails.map((items, index) => {
@@ -193,6 +224,43 @@ const VstudiosComponent = () => {
                 />
                 <div className={VstudioStyles.itemGradient}></div>
                 <div className={VstudioStyles.itemText}>{items.title}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* <button className={VstudioStyles.seeAllButtonMobile}>See All</button> */}
+
+      {/*  Testimonials section*/}
+      <section className={VstudioStyles.testimonialsSection}>
+        <img
+          src="/bg-quotes.png"
+          alt="testimonials"
+          className="h-10 w-10 mb-5"
+        />
+        <div className={VstudioStyles.gridTestimonial}>
+          {testimonials.map((item, index) => {
+            return (
+              <div key={index} className={VstudioStyles.testiMonialItem}>
+                <div className={VstudioStyles.testimonialDescription}>
+                  {item.description}
+                </div>
+                <div className={VstudioStyles.personInfo}>
+                  <img
+                    src={`/profile-${index + 1}.jpg`}
+                    alt="personIcon"
+                    className={VstudioStyles.avatar}
+                  />
+                  <div className={VstudioStyles.customerInfo}>
+                    <div className={VstudioStyles.customerName}>
+                      {item.name}
+                    </div>
+                    <div className={VstudioStyles.designation}>
+                      {item.designation}
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}

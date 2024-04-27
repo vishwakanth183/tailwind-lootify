@@ -7,7 +7,11 @@
 }
 
 .footerContainer {
-  @apply flex flex-col items-center justify-center mb-10 px-20 md:flex-row md:items-end md:justify-around;
+  @apply flex flex-col items-center justify-center mb-10 px-20 md:flex-row md:items-end  md:justify-around;
+}
+
+.footerImg {
+  @apply h-28 w-80;
 }
 
 .footerText {
@@ -31,11 +35,11 @@
 }
 
 .iosButton {
-  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-green-500 hover:bg-green-700 duration-150 rounded-full text-xl;
+  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-green-500 hover:bg-green-600 duration-150 rounded-full text-xl;
 }
 
 .androidButton {
-  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-blue-500 hover:bg-blue-700 duration-150 rounded-full text-xl;
+  @apply w-[280px] px-6 py-4 justify-center items-center text-white bg-blue-500 hover:bg-blue-600 duration-150 rounded-full text-xl;
 }
 
 .sectionMargin {
